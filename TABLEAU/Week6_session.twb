@@ -1,0 +1,1695 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20181.18.1213.2251                               -->
+<workbook source-build='2018.1.8 (20181.18.1213.2251)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='3-Point Likert' caption='Sentiment Type' datatype='integer' name='[매개 변수 1]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+        <calculation class='tableau' formula='4' />
+        <aliases>
+          <alias key='1' value='Net Promoter Score' />
+          <alias key='2' value='Top 3 / Bottom 3' />
+          <alias key='3' value='5-Point Likert' />
+          <alias key='4' value='3-Point Likert' />
+          <alias key='5' value='2-Point Likert' />
+        </aliases>
+        <members>
+          <member alias='Net Promoter Score' value='1' />
+          <member alias='Top 3 / Bottom 3' value='2' />
+          <member alias='5-Point Likert' value='3' />
+          <member alias='3-Point Likert' value='4' />
+          <member alias='2-Point Likert' value='5' />
+        </members>
+      </column>
+      <column alias='Show Score' caption='Show Percentages / NPS Score' datatype='integer' name='[매개 변수 2]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+        <calculation class='tableau' formula='2' />
+        <aliases>
+          <alias key='1' value='Show Percentages' />
+          <alias key='2' value='Show Score' />
+        </aliases>
+        <members>
+          <member alias='Show Percentages' value='1' />
+          <member alias='Show Score' value='2' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS)' inline='true' name='federated.1f4y98p0ta0kc819fnj3y1fi39n5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS)' name='textscan.0n256b61j6eh3319m076s11ajc57'>
+            <connection class='textscan' directory='C:/Users/hyunseok/0-source/1 - BOAZ/Session Visual/tableau/data' filename='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0n256b61j6eh3319m076s11ajc57' name='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv' table='[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS)#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='string' name='Company' ordinal='0' />
+            <column datatype='datetime' date-parse-format='yyyy-MM-dd 오후 HH:mm:ss|#|#|yyyy-MM-HH 오전 mm:ss:dd|#|#|yyyy-MM-EEEEHH 오전 mm:ss:dd|#|#|yyyy-MM-dd 오전 HH:mm:ss' name='Date' ordinal='1' />
+            <column datatype='string' name='ID' ordinal='2' />
+            <column datatype='string' name='Role' ordinal='3' />
+            <column datatype='integer' name='Value' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Company</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Company]</local-name>
+            <parent-name>[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv]</parent-name>
+            <remote-alias>Company</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Role</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Role]</local-name>
+            <parent-name>[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv]</parent-name>
+            <remote-alias>Role</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Value]</local-name>
+            <parent-name>[Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS).csv]</parent-name>
+            <remote-alias>Value</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Count Negative' datatype='real' name='[Calculation_1071575261132812288]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then&#13;&#10;  IF [Value]&lt;=6 THEN 1 &#13;&#10;  elseif [Value]&lt;=8 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 THEN&#13;&#10;  IF [Value]&lt;=3 THEN 1 &#13;&#10;  elseif [Value]&lt;=7 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=3 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=4 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=5 THEN&#13;&#10;  IF [Value]&lt;=5 THEN 1 &#13;&#10;  ELSE 0 END&#13;&#10;END' />
+      </column>
+      <column caption='Total Count Negative' datatype='real' name='[Calculation_1071575261133062145]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='TOTAL(SUM([Calculation_1071575261132812288]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Total Count' datatype='integer' name='[Calculation_1071575261133185026]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='TOTAL(SUM([Number of Records]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Gantt Start' datatype='real' name='[Calculation_1071575261133541379]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='-[Calculation_1071575261133062145]/[Calculation_1071575261133185026]'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Gantt Percent' datatype='real' name='[Calculation_1071575261134336004]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='PREVIOUS_VALUE([Calculation_1071575261133541379])+ZN(LOOKUP([Calculation_1071575261134987269],-1))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Percentage' datatype='real' name='[Calculation_1071575261134987269]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Number of Records])/[Calculation_1071575261133185026]'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='NPS /100 or Top 3 Boxes or Likert' datatype='real' name='[Calculation_480196335090274304]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='If [Parameters].[매개 변수 2]=2 THEN &#13;&#10;  IF [Parameters].[매개 변수 1] =1 then ([Calculation_71213194335997952]/100)&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]=2 THEN [Calculation_71213194337234947]&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]&gt;=3 then [Calculation_71213194337550340]/6&#13;&#10;  end&#13;&#10;END' />
+      </column>
+      <column caption='Show Percentage' datatype='real' name='[Calculation_480196335090798593]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=1 then [Calculation_1071575261134987269] END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='NPS' datatype='real' name='[Calculation_71213194335997952]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then ([Calculation_71213194336620545]+[Calculation_71213194336964610])*100 END' />
+      </column>
+      <column caption='Promoters' datatype='real' name='[Calculation_71213194336620545]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(&#13;&#10;  IF [Value]&gt;=9 &#13;&#10;  then 1 else 0&#13;&#10;  END)/SUM([Number of Records])' />
+      </column>
+      <column caption='Detractors' datatype='real' name='[Calculation_71213194336964610]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='-SUM(IIF([Value]&lt;=6,1,0))/SUM([Number of Records])' />
+      </column>
+      <column caption='% Top 3 Boxes' datatype='real' name='[Calculation_71213194337234947]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=2 AND [Parameters].[매개 변수 1] = 2 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=8 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records]) -&#13;&#10;SUM(&#13;&#10;  IF [Value]&lt;=3 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Likert Score' datatype='real' name='[Calculation_71213194337550340]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]&gt;=3 then AVG([Value]/2) END' />
+      </column>
+      <column caption='Positive_Neutral_Negative' datatype='string' name='[Calculation_71213194339758085]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] = 1 then &#13;&#10;  If [Value]&lt;=6 then &quot;Negative&quot; &#13;&#10;  elseif [Value]&lt;=8 then &quot;Neutral&quot;&#13;&#10;  else &quot;Positive&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 2 THEN&#13;&#10;  If [Value]&lt;=3 then &quot;Bottom 3&quot; &#13;&#10;  elseif [Value]&lt;=7 then &quot;Middle 4&quot;&#13;&#10;  else &quot;Top 3&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 3 THEN&#13;&#10;  If [Value]&lt;=2 then &quot;Strongy disagree&quot; &#13;&#10;  ELSEIF [Value]&lt;=4 then &quot;Disagree&quot;&#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral &quot;&#13;&#10;  ELSEIF [Value]&lt;=8 then &quot;Agree &quot;  &#13;&#10;  else &quot;Strongly Agree&quot;&#13;&#10;   end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 4 THEN&#13;&#10;  If [Value]&lt;=4 then &quot;Disagree&quot; &#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral  &quot;&#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 5 THEN&#13;&#10;  If [Value]&lt;=5 then &quot;Disagree&quot; &#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;END' />
+      </column>
+      <column caption='Sorter 2' datatype='real' name='[Calculation_71213194396741645]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='-IF [Parameters].[매개 변수 1]=1 THEN TOTAL([Calculation_71213194335997952])&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 then -TOTAL(SUM([Calculation_1071575261132812288]))/TOTAL(SUM(1))&#13;&#10;ELSEIF [Parameters].[매개 변수 1]&gt;=3 then &#13;&#10;&#13;&#10;If [Parameters].[매개 변수 2]=1 then TOTAL([Calculation_71213194396946446]) else total([Calculation_71213194337550340]) end&#13;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='% Top 4 Boxes' datatype='real' name='[Calculation_71213194396946446]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] &gt;=3 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=7 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;END' />
+      </column>
+      <column caption='Reference Line for Likert' datatype='integer' name='[Calculation_71213194410164239]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]&gt;=3 then 6 &#13;&#10;else 1 END' />
+      </column>
+      <column caption='Product Group' datatype='string' name='[Company (그룹)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Company]' new-bin='true'>
+          <bin default-name='false' value='&quot;Product A&quot;'>
+            <value>&quot;A&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Product B&quot;'>
+            <value>&quot;B&quot;</value>
+            <value>&quot;C&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Product D&quot;'>
+            <value>&quot;D&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Product E&quot;'>
+            <value>&quot;E&quot;</value>
+            <value>&quot;F&quot;</value>
+            <value>&quot;G&quot;</value>
+            <value>&quot;J&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Product H&quot;'>
+            <value>&quot;H&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Product I&quot;'>
+            <value>&quot;I&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Product K&quot;'>
+            <value>&quot;K&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Company]' role='dimension' type='nominal' />
+      <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Role (group) 1' datatype='string' name='[Role (그룹)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Role]' new-bin='true'>
+          <bin default-name='false' value='&quot;Analyst&quot;'>
+            <value>&quot;Architect&quot;</value>
+            <value>&quot;Other&quot;</value>
+            <value>&quot;Retiree&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Stenographer&quot;'>
+            <value>&quot;Employee&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Role]' role='dimension' type='nominal' />
+      <column-instance column='[Calculation_71213194339758085]' derivation='None' name='[none:Calculation_71213194339758085:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1071575261133185026]' derivation='User' name='[usr:Calculation_1071575261133185026:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[Calculation_1071575261134336004]' derivation='User' name='[usr:Calculation_1071575261134336004:qk:5]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Date]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133541379]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Date]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133062145]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Date]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Date]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Date]' ordering-type='Field' />
+      </column-instance>
+      <column-instance column='[Calculation_1071575261134336004]' derivation='User' name='[usr:Calculation_1071575261134336004:qk:6]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133541379]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133062145]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+      </column-instance>
+      <column-instance column='[Calculation_1071575261134336004]' derivation='User' name='[usr:Calculation_1071575261134336004:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133541379]' ordering-type='Rows' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133062145]' ordering-type='Rows' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-type='Rows' />
+        <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[Calculation_480196335090274304]' derivation='User' name='[usr:Calculation_480196335090274304:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_71213194396741645]' derivation='User' name='[usr:Calculation_71213194396741645:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <layout dim-ordering='alphabetic' dim-percentage='0.288918' measure-ordering='alphabetic' measure-percentage='0.591029' parameter-percentage='0.120053' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:5]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261133185026:qk:1]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_71213194396741645:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_71213194339758085:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bottom 3&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Negative&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Disagree&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Agree&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;Strongly Agree&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Agree &quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Strongy disagree&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Positive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Top 3&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Neutral  &quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Middle 4&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Neutral&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Neutral &quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_71213194339758085:nk]&#10;[:Measure Names]' type='palette'>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>&quot;Bottom 3&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_brown_10_0'>
+              <bucket>&quot;Agree &quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>&quot;Agree&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>&quot;Strongly Agree&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gray_10_0'>
+              <bucket>&quot;Negative&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_green_10_0'>
+              <bucket>&quot;Neutral &quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_green_10_0'>
+              <bucket>&quot;Top 3&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_orange_10_0'>
+              <bucket>&quot;Middle 4&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_pink_10_0'>
+              <bucket>&quot;Neutral&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_purple_10_0'>
+              <bucket>&quot;Positive&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_red_10_0'>
+              <bucket>&quot;Neutral  &quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_red_10_0'>
+              <bucket>&quot;Strongy disagree&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_teal_10_0'>
+              <bucket>&quot;Disagree&quot;</bucket>
+            </map-pri>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;대한민국&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='3-Point Likert' caption='Sentiment Type' datatype='integer' name='[매개 변수 1]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+          <calculation class='tableau' formula='4' />
+          <aliases>
+            <alias key='1' value='Net Promoter Score' />
+            <alias key='2' value='Top 3 / Bottom 3' />
+            <alias key='3' value='5-Point Likert' />
+            <alias key='4' value='3-Point Likert' />
+            <alias key='5' value='2-Point Likert' />
+          </aliases>
+        </column>
+        <column alias='Show Score' caption='Show Percentages / NPS Score' datatype='integer' name='[매개 변수 2]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <aliases>
+            <alias key='1' value='Show Percentages' />
+            <alias key='2' value='Show Score' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='NPS Divergent over time'>
+      <layout-options>
+        <caption>
+          <formatted-text />
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS)' name='federated.1f4y98p0ta0kc819fnj3y1fi39n5' />
+            <datasource caption='매개 변수' name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='3-Point Likert' caption='Sentiment Type' datatype='integer' name='[매개 변수 1]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <aliases>
+                <alias key='1' value='Net Promoter Score' />
+                <alias key='2' value='Top 3 / Bottom 3' />
+                <alias key='3' value='5-Point Likert' />
+                <alias key='4' value='3-Point Likert' />
+                <alias key='5' value='2-Point Likert' />
+              </aliases>
+            </column>
+            <column alias='Show Score' caption='Show Percentages / NPS Score' datatype='integer' name='[매개 변수 2]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <aliases>
+                <alias key='1' value='Show Percentages' />
+                <alias key='2' value='Show Score' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1f4y98p0ta0kc819fnj3y1fi39n5'>
+            <column caption='Count Negative' datatype='real' name='[Calculation_1071575261132812288]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then&#13;&#10;  IF [Value]&lt;=6 THEN 1 &#13;&#10;  elseif [Value]&lt;=8 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 THEN&#13;&#10;  IF [Value]&lt;=3 THEN 1 &#13;&#10;  elseif [Value]&lt;=7 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=3 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=4 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=5 THEN&#13;&#10;  IF [Value]&lt;=5 THEN 1 &#13;&#10;  ELSE 0 END&#13;&#10;END' />
+            </column>
+            <column caption='Total Count Negative' datatype='real' name='[Calculation_1071575261133062145]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='TOTAL(SUM([Calculation_1071575261132812288]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Total Count' datatype='integer' name='[Calculation_1071575261133185026]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='TOTAL(SUM([Number of Records]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Gantt Start' datatype='real' name='[Calculation_1071575261133541379]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-[Calculation_1071575261133062145]/[Calculation_1071575261133185026]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Gantt Percent' datatype='real' name='[Calculation_1071575261134336004]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='PREVIOUS_VALUE([Calculation_1071575261133541379])+ZN(LOOKUP([Calculation_1071575261134987269],-1))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Percentage' datatype='real' name='[Calculation_1071575261134987269]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Number of Records])/[Calculation_1071575261133185026]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='NPS /100 or Top 3 Boxes or Likert' datatype='real' name='[Calculation_480196335090274304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='If [Parameters].[매개 변수 2]=2 THEN &#13;&#10;  IF [Parameters].[매개 변수 1] =1 then ([Calculation_71213194335997952]/100)&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]=2 THEN [Calculation_71213194337234947]&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]&gt;=3 then [Calculation_71213194337550340]/6&#13;&#10;  end&#13;&#10;END' />
+            </column>
+            <column caption='Show Percentage' datatype='real' name='[Calculation_480196335090798593]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=1 then [Calculation_1071575261134987269] END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='NPS' datatype='real' name='[Calculation_71213194335997952]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then ([Calculation_71213194336620545]+[Calculation_71213194336964610])*100 END' />
+            </column>
+            <column caption='Promoters' datatype='real' name='[Calculation_71213194336620545]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(&#13;&#10;  IF [Value]&gt;=9 &#13;&#10;  then 1 else 0&#13;&#10;  END)/SUM([Number of Records])' />
+            </column>
+            <column caption='Detractors' datatype='real' name='[Calculation_71213194336964610]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-SUM(IIF([Value]&lt;=6,1,0))/SUM([Number of Records])' />
+            </column>
+            <column caption='% Top 3 Boxes' datatype='real' name='[Calculation_71213194337234947]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=2 AND [Parameters].[매개 변수 1] = 2 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=8 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records]) -&#13;&#10;SUM(&#13;&#10;  IF [Value]&lt;=3 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Likert Score' datatype='real' name='[Calculation_71213194337550340]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]&gt;=3 then AVG([Value]/2) END' />
+            </column>
+            <column caption='Positive_Neutral_Negative' datatype='string' name='[Calculation_71213194339758085]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] = 1 then &#13;&#10;  If [Value]&lt;=6 then &quot;Negative&quot; &#13;&#10;  elseif [Value]&lt;=8 then &quot;Neutral&quot;&#13;&#10;  else &quot;Positive&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 2 THEN&#13;&#10;  If [Value]&lt;=3 then &quot;Bottom 3&quot; &#13;&#10;  elseif [Value]&lt;=7 then &quot;Middle 4&quot;&#13;&#10;  else &quot;Top 3&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 3 THEN&#13;&#10;  If [Value]&lt;=2 then &quot;Strongy disagree&quot; &#13;&#10;  ELSEIF [Value]&lt;=4 then &quot;Disagree&quot;&#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral &quot;&#13;&#10;  ELSEIF [Value]&lt;=8 then &quot;Agree &quot;  &#13;&#10;  else &quot;Strongly Agree&quot;&#13;&#10;   end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 4 THEN&#13;&#10;  If [Value]&lt;=4 then &quot;Disagree&quot; &#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral  &quot;&#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 5 THEN&#13;&#10;  If [Value]&lt;=5 then &quot;Disagree&quot; &#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;END' />
+            </column>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column datatype='integer' name='[Value]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_71213194339758085]' derivation='None' name='[none:Calculation_71213194339758085:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Date]' derivation='Quarter-Trunc' name='[tqr:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1071575261134336004]' derivation='User' name='[usr:Calculation_1071575261134336004:qk:6]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133541379]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133062145]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_1071575261134987269]' derivation='User' name='[usr:Calculation_1071575261134987269:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_480196335090274304]' derivation='User' name='[usr:Calculation_480196335090274304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_480196335090798593]' derivation='User' name='[usr:Calculation_480196335090798593:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='40' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <encodings>
+              <color column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[none:Calculation_71213194339758085:nk]' />
+              <size column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134987269:qk:4]' />
+              <text column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090798593:qk:4]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6] + [federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk])</rows>
+        <cols>[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[tqr:Date:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='시트 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS)' name='federated.1f4y98p0ta0kc819fnj3y1fi39n5' />
+            <datasource caption='매개 변수' name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='3-Point Likert' caption='Sentiment Type' datatype='integer' name='[매개 변수 1]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <aliases>
+                <alias key='1' value='Net Promoter Score' />
+                <alias key='2' value='Top 3 / Bottom 3' />
+                <alias key='3' value='5-Point Likert' />
+                <alias key='4' value='3-Point Likert' />
+                <alias key='5' value='2-Point Likert' />
+              </aliases>
+            </column>
+            <column alias='Show Score' caption='Show Percentages / NPS Score' datatype='integer' name='[매개 변수 2]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <aliases>
+                <alias key='1' value='Show Percentages' />
+                <alias key='2' value='Show Score' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1f4y98p0ta0kc819fnj3y1fi39n5'>
+            <column caption='Count Negative' datatype='real' name='[Calculation_1071575261132812288]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then&#13;&#10;  IF [Value]&lt;=6 THEN 1 &#13;&#10;  elseif [Value]&lt;=8 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 THEN&#13;&#10;  IF [Value]&lt;=3 THEN 1 &#13;&#10;  elseif [Value]&lt;=7 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=3 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=4 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=5 THEN&#13;&#10;  IF [Value]&lt;=5 THEN 1 &#13;&#10;  ELSE 0 END&#13;&#10;END' />
+            </column>
+            <column caption='Total Count Negative' datatype='real' name='[Calculation_1071575261133062145]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='TOTAL(SUM([Calculation_1071575261132812288]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Total Count' datatype='integer' name='[Calculation_1071575261133185026]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='TOTAL(SUM([Number of Records]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Gantt Start' datatype='real' name='[Calculation_1071575261133541379]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-[Calculation_1071575261133062145]/[Calculation_1071575261133185026]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Gantt Percent' datatype='real' name='[Calculation_1071575261134336004]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='PREVIOUS_VALUE([Calculation_1071575261133541379])+ZN(LOOKUP([Calculation_1071575261134987269],-1))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Percentage' datatype='real' name='[Calculation_1071575261134987269]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Number of Records])/[Calculation_1071575261133185026]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='NPS /100 or Top 3 Boxes or Likert' datatype='real' name='[Calculation_480196335090274304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='If [Parameters].[매개 변수 2]=2 THEN &#13;&#10;  IF [Parameters].[매개 변수 1] =1 then ([Calculation_71213194335997952]/100)&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]=2 THEN [Calculation_71213194337234947]&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]&gt;=3 then [Calculation_71213194337550340]/6&#13;&#10;  end&#13;&#10;END' />
+            </column>
+            <column caption='Show Percentage' datatype='real' name='[Calculation_480196335090798593]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=1 then [Calculation_1071575261134987269] END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='NPS' datatype='real' name='[Calculation_71213194335997952]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then ([Calculation_71213194336620545]+[Calculation_71213194336964610])*100 END' />
+            </column>
+            <column caption='Promoters' datatype='real' name='[Calculation_71213194336620545]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(&#13;&#10;  IF [Value]&gt;=9 &#13;&#10;  then 1 else 0&#13;&#10;  END)/SUM([Number of Records])' />
+            </column>
+            <column caption='Detractors' datatype='real' name='[Calculation_71213194336964610]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-SUM(IIF([Value]&lt;=6,1,0))/SUM([Number of Records])' />
+            </column>
+            <column caption='% Top 3 Boxes' datatype='real' name='[Calculation_71213194337234947]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=2 AND [Parameters].[매개 변수 1] = 2 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=8 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records]) -&#13;&#10;SUM(&#13;&#10;  IF [Value]&lt;=3 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Likert Score' datatype='real' name='[Calculation_71213194337550340]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]&gt;=3 then AVG([Value]/2) END' />
+            </column>
+            <column caption='Positive_Neutral_Negative' datatype='string' name='[Calculation_71213194339758085]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] = 1 then &#13;&#10;  If [Value]&lt;=6 then &quot;Negative&quot; &#13;&#10;  elseif [Value]&lt;=8 then &quot;Neutral&quot;&#13;&#10;  else &quot;Positive&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 2 THEN&#13;&#10;  If [Value]&lt;=3 then &quot;Bottom 3&quot; &#13;&#10;  elseif [Value]&lt;=7 then &quot;Middle 4&quot;&#13;&#10;  else &quot;Top 3&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 3 THEN&#13;&#10;  If [Value]&lt;=2 then &quot;Strongy disagree&quot; &#13;&#10;  ELSEIF [Value]&lt;=4 then &quot;Disagree&quot;&#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral &quot;&#13;&#10;  ELSEIF [Value]&lt;=8 then &quot;Agree &quot;  &#13;&#10;  else &quot;Strongly Agree&quot;&#13;&#10;   end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 4 THEN&#13;&#10;  If [Value]&lt;=4 then &quot;Disagree&quot; &#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral  &quot;&#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 5 THEN&#13;&#10;  If [Value]&lt;=5 then &quot;Disagree&quot; &#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;END' />
+            </column>
+            <column caption='Sorter 2' datatype='real' name='[Calculation_71213194396741645]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-IF [Parameters].[매개 변수 1]=1 THEN TOTAL([Calculation_71213194335997952])&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 then -TOTAL(SUM([Calculation_1071575261132812288]))/TOTAL(SUM(1))&#13;&#10;ELSEIF [Parameters].[매개 변수 1]&gt;=3 then &#13;&#10;&#13;&#10;If [Parameters].[매개 변수 2]=1 then TOTAL([Calculation_71213194396946446]) else total([Calculation_71213194337550340]) end&#13;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='% Top 4 Boxes' datatype='real' name='[Calculation_71213194396946446]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] &gt;=3 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=7 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;END' />
+            </column>
+            <column caption='Product Group' datatype='string' name='[Company (그룹)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[Company]' new-bin='true'>
+                <bin default-name='false' value='&quot;Product A&quot;'>
+                  <value>&quot;A&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Product B&quot;'>
+                  <value>&quot;B&quot;</value>
+                  <value>&quot;C&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Product D&quot;'>
+                  <value>&quot;D&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Product E&quot;'>
+                  <value>&quot;E&quot;</value>
+                  <value>&quot;F&quot;</value>
+                  <value>&quot;G&quot;</value>
+                  <value>&quot;J&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Product H&quot;'>
+                  <value>&quot;H&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Product I&quot;'>
+                  <value>&quot;I&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Product K&quot;'>
+                  <value>&quot;K&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='string' name='[Company]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column datatype='integer' name='[Value]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_71213194339758085]' derivation='None' name='[none:Calculation_71213194339758085:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1071575261133185026]' derivation='User' name='[usr:Calculation_1071575261133185026:ok]' pivot='key' type='ordinal'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_1071575261134336004]' derivation='User' name='[usr:Calculation_1071575261134336004:qk:6]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133541379]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133062145]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_1071575261134987269]' derivation='User' name='[usr:Calculation_1071575261134987269:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_480196335090274304]' derivation='User' name='[usr:Calculation_480196335090274304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_480196335090798593]' derivation='User' name='[usr:Calculation_480196335090798593:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_71213194396741645]' derivation='User' name='[usr:Calculation_71213194396741645:ok:3]' pivot='key' type='ordinal'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]' field-type='quantitative' fold='true' max='1.0' min='-0.59999999999999998' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6]' field-type='quantitative' max='1.0' min='-0.59999999999999998' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='120' />
+            <format attr='cell-h' value='60' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_71213194396741645:ok:3]' value='true' />
+            <format attr='display' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261133185026:ok]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='270' />
+                <format attr='maxwidth' value='270' />
+                <format attr='aspect' value='0' />
+                <format attr='minwidth' value='270' />
+                <format attr='maxwidth' value='270' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <encodings>
+              <color column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[none:Calculation_71213194339758085:nk]' />
+              <size column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134987269:qk:4]' />
+              <text column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090798593:qk:4]' />
+              <color column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='270' />
+                <format attr='maxwidth' value='270' />
+                <format attr='aspect' value='0' />
+                <format attr='minwidth' value='270' />
+                <format attr='maxwidth' value='270' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='270' />
+                <format attr='maxwidth' value='270' />
+                <format attr='aspect' value='0' />
+                <format attr='minwidth' value='270' />
+                <format attr='maxwidth' value='270' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_71213194396741645:ok:3] / ([federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Company (그룹)] / [federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261133185026:ok]))</rows>
+        <cols>([federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6] + [federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='시트 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Surveys Bench (Surveys Bench Data Anonymous_UpatedNPS)' name='federated.1f4y98p0ta0kc819fnj3y1fi39n5' />
+            <datasource caption='매개 변수' name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='3-Point Likert' caption='Sentiment Type' datatype='integer' name='[매개 변수 1]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <aliases>
+                <alias key='1' value='Net Promoter Score' />
+                <alias key='2' value='Top 3 / Bottom 3' />
+                <alias key='3' value='5-Point Likert' />
+                <alias key='4' value='3-Point Likert' />
+                <alias key='5' value='2-Point Likert' />
+              </aliases>
+            </column>
+            <column alias='Show Score' caption='Show Percentages / NPS Score' datatype='integer' name='[매개 변수 2]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <aliases>
+                <alias key='1' value='Show Percentages' />
+                <alias key='2' value='Show Score' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1f4y98p0ta0kc819fnj3y1fi39n5'>
+            <column caption='Count Negative' datatype='real' name='[Calculation_1071575261132812288]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then&#13;&#10;  IF [Value]&lt;=6 THEN 1 &#13;&#10;  elseif [Value]&lt;=8 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 THEN&#13;&#10;  IF [Value]&lt;=3 THEN 1 &#13;&#10;  elseif [Value]&lt;=7 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=3 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=4 THEN&#13;&#10;  IF [Value]&lt;=4 THEN 1 &#13;&#10;  elseif [Value]&lt;=6 then .5&#13;&#10;  ELSE 0 END&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=5 THEN&#13;&#10;  IF [Value]&lt;=5 THEN 1 &#13;&#10;  ELSE 0 END&#13;&#10;END' />
+            </column>
+            <column caption='Total Count Negative' datatype='real' name='[Calculation_1071575261133062145]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='TOTAL(SUM([Calculation_1071575261132812288]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Total Count' datatype='integer' name='[Calculation_1071575261133185026]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='TOTAL(SUM([Number of Records]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Gantt Start' datatype='real' name='[Calculation_1071575261133541379]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-[Calculation_1071575261133062145]/[Calculation_1071575261133185026]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Gantt Percent' datatype='real' name='[Calculation_1071575261134336004]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='PREVIOUS_VALUE([Calculation_1071575261133541379])+ZN(LOOKUP([Calculation_1071575261134987269],-1))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Percentage' datatype='real' name='[Calculation_1071575261134987269]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Number of Records])/[Calculation_1071575261133185026]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='NPS /100 or Top 3 Boxes or Likert' datatype='real' name='[Calculation_480196335090274304]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='If [Parameters].[매개 변수 2]=2 THEN &#13;&#10;  IF [Parameters].[매개 변수 1] =1 then ([Calculation_71213194335997952]/100)&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]=2 THEN [Calculation_71213194337234947]&#13;&#10;  ELSEIF [Parameters].[매개 변수 1]&gt;=3 then [Calculation_71213194337550340]/6&#13;&#10;  end&#13;&#10;END' />
+            </column>
+            <column caption='Show Percentage' datatype='real' name='[Calculation_480196335090798593]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=1 then [Calculation_1071575261134987269] END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='NPS' datatype='real' name='[Calculation_71213194335997952]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]=1 then ([Calculation_71213194336620545]+[Calculation_71213194336964610])*100 END' />
+            </column>
+            <column caption='Promoters' datatype='real' name='[Calculation_71213194336620545]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(&#13;&#10;  IF [Value]&gt;=9 &#13;&#10;  then 1 else 0&#13;&#10;  END)/SUM([Number of Records])' />
+            </column>
+            <column caption='Detractors' datatype='real' name='[Calculation_71213194336964610]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-SUM(IIF([Value]&lt;=6,1,0))/SUM([Number of Records])' />
+            </column>
+            <column caption='% Top 3 Boxes' datatype='real' name='[Calculation_71213194337234947]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 2]=2 AND [Parameters].[매개 변수 1] = 2 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=8 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records]) -&#13;&#10;SUM(&#13;&#10;  IF [Value]&lt;=3 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Likert Score' datatype='real' name='[Calculation_71213194337550340]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1]&gt;=3 then AVG([Value]/2) END' />
+            </column>
+            <column caption='Positive_Neutral_Negative' datatype='string' name='[Calculation_71213194339758085]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] = 1 then &#13;&#10;  If [Value]&lt;=6 then &quot;Negative&quot; &#13;&#10;  elseif [Value]&lt;=8 then &quot;Neutral&quot;&#13;&#10;  else &quot;Positive&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 2 THEN&#13;&#10;  If [Value]&lt;=3 then &quot;Bottom 3&quot; &#13;&#10;  elseif [Value]&lt;=7 then &quot;Middle 4&quot;&#13;&#10;  else &quot;Top 3&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 3 THEN&#13;&#10;  If [Value]&lt;=2 then &quot;Strongy disagree&quot; &#13;&#10;  ELSEIF [Value]&lt;=4 then &quot;Disagree&quot;&#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral &quot;&#13;&#10;  ELSEIF [Value]&lt;=8 then &quot;Agree &quot;  &#13;&#10;  else &quot;Strongly Agree&quot;&#13;&#10;   end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 4 THEN&#13;&#10;  If [Value]&lt;=4 then &quot;Disagree&quot; &#13;&#10;  elseif [Value]&lt;=6 then &quot;Neutral  &quot;&#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;ELSEIF [Parameters].[매개 변수 1] = 5 THEN&#13;&#10;  If [Value]&lt;=5 then &quot;Disagree&quot; &#13;&#10;  else &quot;Agree&quot;&#13;&#10;  end&#13;&#10;END' />
+            </column>
+            <column caption='Sorter 2' datatype='real' name='[Calculation_71213194396741645]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='-IF [Parameters].[매개 변수 1]=1 THEN TOTAL([Calculation_71213194335997952])&#13;&#10;ELSEIF [Parameters].[매개 변수 1]=2 then -TOTAL(SUM([Calculation_1071575261132812288]))/TOTAL(SUM(1))&#13;&#10;ELSEIF [Parameters].[매개 변수 1]&gt;=3 then &#13;&#10;&#13;&#10;If [Parameters].[매개 변수 2]=1 then TOTAL([Calculation_71213194396946446]) else total([Calculation_71213194337550340]) end&#13;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='% Top 4 Boxes' datatype='real' name='[Calculation_71213194396946446]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[매개 변수 1] &gt;=3 then &#13;&#10;SUM(&#13;&#10;  IF [Value]&gt;=7 then 1 else 0 END&#13;&#10;  ) / SUM([Number of Records])&#13;&#10;END' />
+            </column>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column caption='Role (group) 1' datatype='string' name='[Role (그룹)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[Role]' new-bin='true'>
+                <bin default-name='false' value='&quot;Analyst&quot;'>
+                  <value>&quot;Architect&quot;</value>
+                  <value>&quot;Other&quot;</value>
+                  <value>&quot;Retiree&quot;</value>
+                </bin>
+                <bin default-name='false' value='&quot;Stenographer&quot;'>
+                  <value>&quot;Employee&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='string' name='[Role]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Value]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_71213194339758085]' derivation='None' name='[none:Calculation_71213194339758085:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1071575261134336004]' derivation='User' name='[usr:Calculation_1071575261134336004:qk:6]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133541379]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133062145]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_1071575261134987269]' derivation='User' name='[usr:Calculation_1071575261134987269:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_480196335090274304]' derivation='User' name='[usr:Calculation_480196335090274304:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_480196335090798593]' derivation='User' name='[usr:Calculation_480196335090798593:qk:4]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261134987269]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+              <table-calc field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_1071575261133185026]' ordering-field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Calculation_71213194339758085]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_71213194396741645]' derivation='User' name='[usr:Calculation_71213194396741645:ok]' pivot='key' type='ordinal'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]' field-type='quantitative' fold='true' max='1.0' min='-0.80000000000000004' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6]' field-type='quantitative' max='1.0' min='-0.80000000000000004' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_71213194396741645:ok]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <encodings>
+              <color column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[none:Calculation_71213194339758085:nk]' />
+              <size column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134987269:qk:4]' />
+              <text column='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090798593:qk:4]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_71213194396741645:ok] / [federated.1f4y98p0ta0kc819fnj3y1fi39n5].[Role (그룹)])</rows>
+        <cols>([federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_1071575261134336004:qk:6] + [federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_480196335090274304:qk])</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='NPS Divergent over time'>
+      <cards>
+        <edge name='left'>
+          <strip size='168'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[매개 변수 2]' type='parameter' />
+            <card mode='compact' param='[Parameters].[매개 변수 1]' type='parameter' />
+            <card pane-specification-id='1' param='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[none:Calculation_71213194339758085:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='시트 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='3' param='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[none:Calculation_71213194339758085:nk]&#10;[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[:Measure Names]' type='color' />
+            <card mode='compact' param='[Parameters].[매개 변수 1]' type='parameter' />
+            <card mode='compact' param='[Parameters].[매개 변수 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='시트 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[none:Calculation_71213194339758085:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1f4y98p0ta0kc819fnj3y1fi39n5].[usr:Calculation_71213194396741645:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='NPS Divergent over time' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='시트 2' width='192'>
+      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
+      AABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='시트 3' width='192'>
+      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
+      zErlUR8zxQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
