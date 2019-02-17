@@ -1,0 +1,1435 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.18.1219.1533                               -->
+<workbook source-build='2018.3.2 (20183.18.1219.1533)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Discount changes' datatype='real' name='[Discount 매개 변수 2]' param-domain-type='range' role='measure' type='quantitative' value='0.014882441220610301'>
+        <calculation class='tableau' formula='0.014882441220610301' />
+        <range max='0.25' min='-0.25' />
+      </column>
+      <column caption='Order Date 매개변수' datatype='date' default-format='*yyyy &quot;분기&quot;q' name='[Order Date 매개 변수 2]' param-domain-type='range' role='measure' type='quantitative' value='#2016-06-14#'>
+        <calculation class='tableau' formula='#2016-06-14#' />
+        <range max='#2016-06-14#' min='#2012-06-15#' />
+      </column>
+      <column caption='Order Date 매개 변수' datatype='date' default-format='*yyyy' name='[Order Date 매개 변수]' param-domain-type='list' role='measure' type='quantitative' value='#2015-06-15#'>
+        <calculation class='tableau' formula='#2015-06-15#' />
+        <members>
+          <member value='#2012-06-15#' />
+          <member value='#2013-06-15#' />
+          <member value='#2014-06-15#' />
+          <member value='#2015-06-15#' />
+        </members>
+      </column>
+      <column caption='Order Quantity 매개변수' datatype='integer' name='[Order Quantity 매개 변수]' param-domain-type='range' role='measure' type='quantitative' value='409'>
+        <calculation class='tableau' formula='409' />
+        <range granularity='1' max='1200' min='0' />
+      </column>
+      <column caption='Unit Profit Margin 매개 변수' datatype='real' name='[Unit Profit Margin 매개 변수]' param-domain-type='range' role='measure' type='quantitative' value='2032.4331999999999'>
+        <calculation class='tableau' formula='2032.4331999999999' />
+        <range granularity='1.0' max='2645.3778000000002' min='0.43320000000000003' />
+      </column>
+    </datasource>
+    <datasource caption='Orders' inline='true' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Orders' name='textscan.1pf4na818ti1se10e1k6k1h93oi6'>
+            <connection class='textscan' directory='C:/Users/USER/Documents/Github/2019-1-winter-BOAZ/TABLEAU/input' filename='Orders.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1pf4na818ti1se10e1k6k1h93oi6' name='Orders.csv' table='[Orders#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='integer' name='Week Number' ordinal='0' />
+            <column datatype='string' name='Quarter Highlighter' ordinal='1' />
+            <column datatype='string' name='Sales (Selected Month)' ordinal='2' />
+            <column datatype='string' name='Sales % Difference from Previous' ordinal='3' />
+            <column datatype='string' name='MTD More or Less' ordinal='4' />
+            <column datatype='string' name='YTD Sales (Selected)' ordinal='5' />
+            <column datatype='string' name='MTD Sales % Difference' ordinal='6' />
+            <column datatype='string' name='What to show' ordinal='7' />
+            <column datatype='integer' name='Days left EoQ' ordinal='8' />
+            <column datatype='string' name='Customer Name' ordinal='9' />
+            <column datatype='string' name='Customer Segment' ordinal='10' />
+            <column datatype='string' name='Customer State' ordinal='11' />
+            <column datatype='real' name='Discount' ordinal='12' />
+            <column datatype='string' name='MTD Profit % Difference' ordinal='13' />
+            <column datatype='string' name='YTD Sales % Difference' ordinal='14' />
+            <column datatype='string' name='MTD Profit (Previous)' ordinal='15' />
+            <column datatype='string' name='MTD Profit (Selected)' ordinal='16' />
+            <column datatype='string' name='MTD Sales (Previous)' ordinal='17' />
+            <column datatype='integer' name='레코드 수' ordinal='18' />
+            <column datatype='date' name='Order Date' ordinal='19' />
+            <column datatype='integer' name='Order ID' ordinal='20' />
+            <column datatype='string' name='Order Priority' ordinal='21' />
+            <column datatype='integer' name='Order Quantity' ordinal='22' />
+            <column datatype='real' name='Product Base Margin' ordinal='23' />
+            <column datatype='string' name='Product Category' ordinal='24' />
+            <column datatype='string' name='Product Container' ordinal='25' />
+            <column datatype='string' name='Product Name' ordinal='26' />
+            <column datatype='string' name='Product Sub-Category' ordinal='27' />
+            <column datatype='real' name='Profit' ordinal='28' />
+            <column datatype='string' name='Region' ordinal='29' />
+            <column datatype='integer' name='Row ID' ordinal='30' />
+            <column datatype='string' name='Sales (Previous Month)' ordinal='31' />
+            <column datatype='string' name='Sales' ordinal='32' />
+            <column datatype='date' name='Ship Date' ordinal='33' />
+            <column datatype='string' name='Ship Mode' ordinal='34' />
+            <column datatype='real' name='Shipping Cost' ordinal='35' />
+            <column datatype='real' name='Unit Price' ordinal='36' />
+            <column datatype='string' name='MTD Sales (Selected)' ordinal='37' />
+            <column datatype='string' name='YTD Sales (Previous)' ordinal='38' />
+            <column datatype='integer' name='Zip Code' ordinal='39' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Week Number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Week Number]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Week Number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quarter Highlighter</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Quarter Highlighter]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Quarter Highlighter</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales (Selected Month)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sales (Selected Month)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Sales (Selected Month)</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales % Difference from Previous</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sales % Difference from Previous]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Sales % Difference from Previous</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD More or Less</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD More or Less]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD More or Less</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YTD Sales (Selected)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[YTD Sales (Selected)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>YTD Sales (Selected)</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD Sales % Difference</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD Sales % Difference]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD Sales % Difference</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>What to show</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[What to show]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>What to show</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Days left EoQ</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Days left EoQ]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Days left EoQ</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Customer Name]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Customer Name</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer Segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Customer Segment]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Customer Segment</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Customer State]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Customer State</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Discount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Discount]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Discount</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD Profit % Difference</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD Profit % Difference]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD Profit % Difference</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YTD Sales % Difference</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[YTD Sales % Difference]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>YTD Sales % Difference</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD Profit (Previous)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD Profit (Previous)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD Profit (Previous)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD Profit (Selected)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD Profit (Selected)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD Profit (Selected)</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD Sales (Previous)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD Sales (Previous)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD Sales (Previous)</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>레코드 수</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[레코드 수]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>레코드 수</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Order Date]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Order Date</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Order ID]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Order ID</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order Priority</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Order Priority]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Order Priority</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order Quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Order Quantity]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Order Quantity</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Base Margin</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Product Base Margin]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Product Base Margin</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product Category]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Product Category</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Container</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product Container]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Product Container</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product Name]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Product Name</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Sub-Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Product Sub-Category]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Product Sub-Category</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Profit</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Profit]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Profit</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Row ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Row ID]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Row ID</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales (Previous Month)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sales (Previous Month)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Sales (Previous Month)</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sales]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Sales</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ship Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Ship Date]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Ship Date</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ship Mode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ship Mode]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Ship Mode</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shipping Cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shipping Cost]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Shipping Cost</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unit Price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Unit Price]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Unit Price</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MTD Sales (Selected)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MTD Sales (Selected)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>MTD Sales (Selected)</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YTD Sales (Previous)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[YTD Sales (Previous)]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>YTD Sales (Previous)</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Zip Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Zip Code]</local-name>
+            <parent-name>[Orders.csv]</parent-name>
+            <remote-alias>Zip Code</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='MTD Sales Previous' datatype='integer' name='[Calculation_377739444631093248]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INT(REPLACE([MTD Sales (Previous)],&apos;$&apos;,&apos;&apos;))' />
+      </column>
+      <column caption='MTD Sales Selected' datatype='integer' name='[Calculation_377739444631261185]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INT(REPLACE([MTD Sales (Previous)],&apos;$&apos;,&apos;&apos;))' />
+      </column>
+      <column caption='Unit Profit Margin' datatype='real' name='[Calculation_377739444632793090]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Unit Price]*[Product Base Margin]' />
+      </column>
+      <column caption='Sales_' datatype='integer' name='[Calculation_377739444635082756]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INT(REPLACE([Sales],&apos;$&apos;,&apos;&apos;))' />
+      </column>
+      <column caption='Total Margin per purchase' datatype='real' name='[Calculation_377739444705996805]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_377739444632793090]*[Order Quantity]' />
+      </column>
+      <column caption='Expected Order Quantity' datatype='real' name='[Calculation_377739444747776012]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='467.734*([Discount]+[Parameters].[Discount 매개 변수 2]) + 24.7823' />
+      </column>
+      <column caption='Target' datatype='string' name='[Calculation_377739444752039950]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF SUM([Calculation_377739444632793090]) &gt; [Parameters].[Unit Profit Margin 매개 변수] AND sum([Order Quantity]) &lt; [Parameters].[Order Quantity 매개 변수] then &quot;Target&quot;&#13;&#10;ELSE &quot;Normal&quot; &#13;&#10;END' />
+      </column>
+      <column datatype='string' name='[Customer Name]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Customer State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='real' name='[Discount]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Order ID]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Order Quantity]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Product Sub-Category]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Row ID]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Week Number]' role='dimension' type='quantitative' />
+      <column datatype='integer' default-format='*00000' name='[Zip Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column-instance column='[Calculation_377739444747776012]' derivation='Avg' name='[avg:Calculation_377739444747776012:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Discount]' derivation='Avg' name='[avg:Discount:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Order Quantity]' derivation='Avg' name='[avg:Order Quantity:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_377739444752039950]' derivation='None' name='[none:Calculation_377739444752039950:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Customer Name]' derivation='None' name='[none:Customer Name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Product Sub-Category]' derivation='None' name='[none:Product Sub-Category:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_377739444632793090]' derivation='Sum' name='[sum:Calculation_377739444632793090:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_377739444705996805]' derivation='Sum' name='[sum:Calculation_377739444705996805:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_377739444747776012]' derivation='Sum' name='[sum:Calculation_377739444747776012:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Discount]' derivation='Sum' name='[sum:Discount:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Order Quantity]' derivation='Sum' name='[sum:Order Quantity:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+      <group hidden='true' name='[제외(Customer Name,Target)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Customer Name:nk]' />
+          <groupfilter function='level-members' level='[none:Calculation_377739444752039950:nk]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.505863' measure-ordering='alphabetic' measure-percentage='0.247906' parameter-percentage='0.246231' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Product Sub-Category:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Office Furnishings&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Appliances&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Computer Peripherals&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Rubber Bands&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Office Machines&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Copiers and Fax&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Binders and Binder Accessories&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Telephones and Communication&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Envelopes&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Scissors, Rulers and Trimmers&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Storage &amp; Organization&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Paper&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Labels&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Bookcases&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Tables&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Pens &amp; Art Supplies&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Chairs &amp; Chairmats&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[yr:Order Date:ok]' palette='traffic_light_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>2012</bucket>
+            </map>
+            <map to='#51b364'>
+              <bucket>2014</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>2016</bucket>
+            </map>
+            <map to='#b60a1c'>
+              <bucket>2015</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2013</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[yr:Order Date:ok]&#10;[:Measure Names]' type='palette'>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>2012</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>2015</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_green_10_0'>
+              <bucket>2014</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_orange_10_0'>
+              <bucket>2013</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_teal_10_0'>
+              <bucket>2016</bucket>
+            </map-pri>
+          </encoding>
+          <encoding attr='shape' field='[:Measure Names]' palette=':default' type='shape'>
+            <map to='asterisk'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Calculation_377739444747776012:qk]&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Discount:qk]&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444747776012:qk]&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Discount:qk]&quot;</bucket>
+            </map>
+            <map to='diamond'>
+              <bucket>&quot;[Parameters].[Unit Profit Margin 매개 변수]&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;[Parameters].[Discount 매개 변수 2]&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444705996805:qk]&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Order Quantity:qk]&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_377739444752039950:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Normal&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Target&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Calculation_377739444747776012:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444747776012:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[Parameters].[Unit Profit Margin 매개 변수]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Order Quantity:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;대한민국&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Discount changes' datatype='real' name='[Discount 매개 변수 2]' param-domain-type='range' role='measure' type='quantitative' value='0.014882441220610301'>
+          <calculation class='tableau' formula='0.014882441220610301' />
+          <range max='0.25' min='-0.25' />
+        </column>
+        <column caption='Order Quantity 매개변수' datatype='integer' name='[Order Quantity 매개 변수]' param-domain-type='range' role='measure' type='quantitative' value='409'>
+          <calculation class='tableau' formula='409' />
+          <range granularity='1' max='1200' min='0' />
+        </column>
+        <column caption='Unit Profit Margin 매개 변수' datatype='real' name='[Unit Profit Margin 매개 변수]' param-domain-type='range' role='measure' type='quantitative' value='2032.4331999999999'>
+          <calculation class='tableau' formula='2032.4331999999999' />
+          <range granularity='1.0' max='2645.3778000000002' min='0.43320000000000003' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='1. MAIN TARGET'>
+      <layout-options>
+        <caption>
+          <formatted-text>
+            <run>VIP 선정 기준 설정&#10;</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Orders' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' />
+            <datasource caption='매개 변수' name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Order Quantity 매개변수' datatype='integer' name='[Order Quantity 매개 변수]' param-domain-type='range' role='measure' type='quantitative' value='409'>
+              <calculation class='tableau' formula='409' />
+              <range granularity='1' max='1200' min='0' />
+            </column>
+            <column caption='Unit Profit Margin 매개 변수' datatype='real' name='[Unit Profit Margin 매개 변수]' param-domain-type='range' role='measure' type='quantitative' value='2032.4331999999999'>
+              <calculation class='tableau' formula='2032.4331999999999' />
+              <range granularity='1.0' max='2645.3778000000002' min='0.43320000000000003' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0gj9gsp1fm2gek1aa198h0knkiuv'>
+            <column caption='Unit Profit Margin' datatype='real' name='[Calculation_377739444632793090]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit Price]*[Product Base Margin]' />
+            </column>
+            <column caption='Target' datatype='string' name='[Calculation_377739444752039950]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF SUM([Calculation_377739444632793090]) &gt; [Parameters].[Unit Profit Margin 매개 변수] AND sum([Order Quantity]) &lt; [Parameters].[Order Quantity 매개 변수] then &quot;Target&quot;&#13;&#10;ELSE &quot;Normal&quot; &#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Customer Name]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Order Quantity]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Product Base Margin]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Unit Price]' role='measure' type='quantitative' />
+            <column-instance column='[Customer Name]' derivation='None' name='[none:Customer Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_377739444632793090]' derivation='Sum' name='[sum:Calculation_377739444632793090:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Quantity]' derivation='Sum' name='[sum:Order Quantity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_377739444752039950]' derivation='User' name='[usr:Calculation_377739444752039950:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]' field-type='quantitative' max='1457' min='-171' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]' field-type='quantitative' max='3377.5320159932762' min='-567.18268055104136' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+            <format attr='line-visibility' id='refline1' value='on' />
+            <format attr='line-pattern-only' id='refline1' value='dotted' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dotted' />
+            <format attr='fill-above' id='refline2' value='#00000000' />
+            <format attr='fill-below' id='refline2' value='#00000000' />
+            <format attr='line-visibility' id='refline2' value='on' />
+            <format attr='line-pattern-only' id='refline2' value='dotted' />
+            <format attr='fill-above' id='refline3' value='#00000000' />
+            <format attr='fill-below' id='refline3' value='#00000000' />
+            <format attr='line-visibility' id='refline3' value='on' />
+            <format attr='line-pattern-only' id='refline3' value='dotted' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[usr:Calculation_377739444752039950:nk]' />
+              <lod column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Customer Name:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]' enable-instant-analytics='true' formula='average' id='refline1' label='Order Quantity: &lt;Value&gt;' label-type='custom' probability='95' scope='per-pane' value-column='[Parameters].[Order Quantity 매개 변수]' z-order='1' />
+            <reference-line axis-column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]' enable-instant-analytics='true' formula='average' id='refline2' label='Unit Profit Margin: &lt;Value&gt;' label-type='custom' probability='95' scope='per-pane' value-column='[Parameters].[Unit Profit Margin 매개 변수]' z-order='2' />
+            <reference-line axis-column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]' enable-instant-analytics='true' formula='average' id='refline3' label='Order Quantity: &lt;Value&gt;' label-type='custom' probability='95' scope='per-pane' value-column='[Parameters].[Order Quantity 매개 변수]' z-order='3' />
+          </pane>
+        </panes>
+        <rows>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]</rows>
+        <cols>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='3. DISCOUNT RATE'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Orders' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gj9gsp1fm2gek1aa198h0knkiuv'>
+            <column datatype='string' name='[Customer Name]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Discount]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Order Quantity]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product Sub-Category]' role='dimension' type='nominal' />
+            <column-instance column='[Discount]' derivation='Avg' name='[avg:Discount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Quantity]' derivation='Avg' name='[avg:Order Quantity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Customer Name]' derivation='None' name='[none:Customer Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Product Sub-Category]' derivation='None' name='[none:Product Sub-Category:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]'>
+            <groupfilter function='empty-level' member='[none:Product Sub-Category:nk]' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Customer Name:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.84558010101318359' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Order Quantity:qk]</rows>
+        <cols>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[avg:Discount:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='4. 2014 VS 2015'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Orders' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gj9gsp1fm2gek1aa198h0knkiuv'>
+            <column caption='Unit Profit Margin' datatype='real' name='[Calculation_377739444632793090]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit Price]*[Product Base Margin]' />
+            </column>
+            <column caption='Total Margin per purchase' datatype='real' name='[Calculation_377739444705996805]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_377739444632793090]*[Order Quantity]' />
+            </column>
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Order Quantity]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Product Base Margin]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product Sub-Category]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Unit Price]' role='measure' type='quantitative' />
+            <column-instance column='[Product Sub-Category]' derivation='None' name='[none:Product Sub-Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Order Date]' derivation='Quarter' name='[qr:Order Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_377739444705996805]' derivation='Sum' name='[sum:Calculation_377739444705996805:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Quantity]' derivation='Sum' name='[sum:Order Quantity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Product Sub-Category:nk]' member='&quot;Chairs &amp; Chairmats&quot;' />
+              <groupfilter function='member' level='[none:Product Sub-Category:nk]' member='&quot;Office Machines&quot;' />
+              <groupfilter function='member' level='[none:Product Sub-Category:nk]' member='&quot;Tables&quot;' />
+              <groupfilter function='member' level='[none:Product Sub-Category:nk]' member='&quot;Telephones and Communication&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[yr:Order Date:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[yr:Order Date:ok]' member='2014' />
+              <groupfilter function='member' level='[yr:Order Date:ok]' member='2015' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[yr:Order Date:ok]</column>
+            <column>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444705996805:qk]' scope='rows' value='Total Margin per purchase의 합' />
+            <encoding attr='space' class='0' field='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444705996805:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[qr:Order Date:ok]' value='163' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444705996805:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='size' value='1.813093900680542' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk] + [federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444705996805:qk])</rows>
+        <cols>([federated.0gj9gsp1fm2gek1aa198h0knkiuv].[qr:Order Date:ok] / [federated.0gj9gsp1fm2gek1aa198h0knkiuv].[yr:Order Date:ok])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Unit Profit Margin - Quantity'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Orders' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gj9gsp1fm2gek1aa198h0knkiuv'>
+            <column caption='Unit Profit Margin' datatype='real' name='[Calculation_377739444632793090]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit Price]*[Product Base Margin]' />
+            </column>
+            <column datatype='integer' name='[Order Quantity]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Product Base Margin]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product Sub-Category]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Unit Price]' role='measure' type='quantitative' />
+            <column-instance column='[Product Sub-Category]' derivation='None' name='[none:Product Sub-Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_377739444632793090]' derivation='Sum' name='[sum:Calculation_377739444632793090:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Quantity]' derivation='Sum' name='[sum:Order Quantity:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]' />
+              <size column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]' />
+              <text column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]' />
+              <text column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Order Quantity:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Unit Profit Margin - Sales'>
+      <layout-options>
+        <caption>
+          <formatted-text>
+            <run fontname='a고딕12'>Quantity 대비 Sales에서 차지하는 비율이 높음 </run>
+            <run>Æ&#10;</run>
+            <run fontname='a고딕12'>-&gt; 판매가치가 높은 네가지 카테고리 </run>
+            <run>Æ&#10;</run>
+            <run fontname='a고딕12'>-&gt; Office Machines, Telephones and Communication, Tables, Chairs&amp;Chairmats</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Orders' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gj9gsp1fm2gek1aa198h0knkiuv'>
+            <column caption='Unit Profit Margin' datatype='real' name='[Calculation_377739444632793090]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit Price]*[Product Base Margin]' />
+            </column>
+            <column caption='Sales_' datatype='integer' name='[Calculation_377739444635082756]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='INT(REPLACE([Sales],&apos;$&apos;,&apos;&apos;))' />
+            </column>
+            <column datatype='real' name='[Product Base Margin]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Product Sub-Category]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Sales]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Unit Price]' role='measure' type='quantitative' />
+            <column-instance column='[Product Sub-Category]' derivation='None' name='[none:Product Sub-Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_377739444632793090]' derivation='Sum' name='[sum:Calculation_377739444632793090:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_377739444635082756]' derivation='Sum' name='[sum:Calculation_377739444635082756:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]' />
+              <size column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444635082756:qk]' />
+              <text column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]' />
+              <text column='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444635082756:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='시트 6'>
+      <layout-options>
+        <caption>
+          <formatted-text>
+            <run>Sales 대비 profit</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Orders' name='federated.0gj9gsp1fm2gek1aa198h0knkiuv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gj9gsp1fm2gek1aa198h0knkiuv'>
+            <column caption='Unit Profit Margin' datatype='real' name='[Calculation_377739444632793090]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Unit Price]*[Product Base Margin]' />
+            </column>
+            <column caption='Total Margin per purchase' datatype='real' name='[Calculation_377739444705996805]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_377739444632793090]*[Order Quantity]' />
+            </column>
+            <column datatype='integer' name='[Order Quantity]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Product Base Margin]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Unit Price]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_377739444705996805]' derivation='Sum' name='[sum:Calculation_377739444705996805:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444705996805:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='44'>
+    <window class='worksheet' name='1. MAIN TARGET'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Unit Profit Margin 매개 변수]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Order Quantity 매개 변수]' type='parameter' />
+            <card pane-specification-id='2' param='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[usr:Calculation_377739444752039950:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A371E376-EA2F-4448-96B6-063B3AAC0876}' />
+    </window>
+    <window class='worksheet' name='Unit Profit Margin - Quantity'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{64765112-5A19-4DFF-A9CC-FE06C57B9DE1}' />
+    </window>
+    <window class='worksheet' name='Unit Profit Margin - Sales'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[sum:Calculation_377739444632793090:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{04FBD698-3783-4D39-AD93-999190AB8DAB}' />
+    </window>
+    <window class='worksheet' maximized='true' name='3. DISCOUNT RATE'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='246'>
+            <card param='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]' type='filter' />
+            <card mode='slider' param='[Parameters].[Discount 매개 변수 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+      <simple-id uuid='{AC327219-44DB-469E-8D3C-E9C1FF1A213A}' />
+    </window>
+    <window class='worksheet' name='4. 2014 VS 2015'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0gj9gsp1fm2gek1aa198h0knkiuv].[none:Product Sub-Category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1F72F81C-2228-4BFA-9D86-4B5505E03B3B}' />
+    </window>
+    <window class='worksheet' name='시트 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3D6CD797-5E7E-4C80-AD63-96C918AC555A}' />
+    </window>
+  </windows>
+</workbook>
